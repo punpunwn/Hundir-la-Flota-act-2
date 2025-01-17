@@ -1,0 +1,26 @@
+#include <stdio.h>
+#define tamano
+
+int main () {
+     int x, y, aciertos = 0, intentos = 0;
+
+    printf("Hunde los barcos de tu enemigo\n\n");
+
+    while (aciertos < 10) { 
+        printf("Introduce coordenadas para disparar (fila y columna, entre 0 y 6): ");
+        scanf("%d %d", &x, &y);
+
+
+        if (tableroJugador[x][y] == 1) {
+            printf("Le diste a un barco\n");
+            tableroJugador[x][y] = -1; 
+            aciertos++;
+        } else if (tableroJugador[x][y] == 0) {
+            printf("Fallaste\n");
+            tableroJugador[x][y] = -1; 
+        } else {
+            printf("Intenta de nuevo\n");
+        }
+
+        intentos++;
+    }
